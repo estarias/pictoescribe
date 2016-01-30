@@ -5,6 +5,8 @@
     <title>Pictoescribe</title>
     
     <link rel='stylesheet prefetch' href='http://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
   </head>
@@ -16,13 +18,33 @@
    <md-toolbar >
         <div class="md-toolbar-tools">
 
-          <md-button class="md-raised" aria-label="Learn More">
-            Botón
-          </md-button>
+		<md-button  aria-label="Nuevo"> 
+			<md-icon aria-label="create_new_folder" class="material-icons" ng-class="it.size"> create_new_folder </md-icon> 
+		</md-button>
+		<md-button  aria-label="Nuevo"> 
+			<md-icon aria-label="folder_open" class="material-icons" ng-class="it.size"> folder_open </md-icon> 
+		</md-button>
+		<md-button  aria-label="Nuevo"> 
+			<md-icon aria-label="save" class="material-icons" ng-class="it.size"> save </md-icon> 
+		</md-button>
+		<span flex></span>
+		<md-button class="md-raised" aria-label="Deshacer"> Deshacer </md-button>
+		<md-button class="md-raised" aria-label="Rehacer"> Rehacer </md-button>
+		<span flex></span>
+		<md-button class="md-raised" aria-label="Cortar"> Cortar </md-button>
+		<md-button class="md-raised" aria-label="Copiar"> Copiar </md-button>
+		<md-button class="md-raised" aria-label="Pegar"> Pegar </md-button>
+		<span flex></span>
+		<md-button class="md-raised" aria-label="Borrar"> Borrar </md-button>
+		<span flex></span>
+		<md-button class="md-raised" aria-label="Exportar"> Exportar </md-button>
+		<md-button class="md-raised" aria-label="Compartir"> Compartir </md-button>
+		<span flex></span>
+		<md-button class="md-raised" aria-label="Reproducir"> Reproducir </md-button>
 
-      <md-button class="md-icon-button" aria-label="Favorite">
-            <md-icon md-svg-icon="img/icons/favorite-user.svg" ></md-icon>
-          </md-button>
+<!--      <md-button class="md-icon-button" aria-label="Favorite">-->
+<!--            <md-icon md-svg-icon="img/icons/favorite-user.svg" ></md-icon>-->
+<!--          </md-button>-->
 
         </div>
    </md-toolbar>
