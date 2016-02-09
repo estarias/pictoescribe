@@ -1,104 +1,99 @@
 <!DOCTYPE html>
 <html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Pictoescribe</title>
-    
-    <link rel='stylesheet prefetch' href='http://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.css'>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pictoescribe</title>
+        <link rel='stylesheet prefetch' href='http://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div ng-include src="'toolbar.html'"></div> 
+        <div ng-controller="AppCtrl" ng-app="MyApp" layout-fill>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <span flex></span>                    
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Nuevo</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> create_new_folder </md-icon> 
+                        </md-button>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Abrir</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> folder_open </md-icon> 
+                        </md-button>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Guardar</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> save </md-icon> 
+                        </md-button>
+                        <span flex></span>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Deshacer</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> undo </md-icon> 
+                        </md-button>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Rehacer</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> redo </md-icon> 
+                        </md-button>
+                        <span flex></span>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Cortar</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> content_cut </md-icon> 
+                        </md-button>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Copiar</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> content_copy </md-icon> 
+                        </md-button>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Pegar</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> content_paste </md-icon> 
+                        </md-button>
+                        <span flex></span>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Borrar</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> backspace </md-icon> 
+                        </md-button>
+                        <span flex></span>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Exportar</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> file_download </md-icon> 
+                        </md-button>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Compartir</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> share </md-icon> 
+                        </md-button>
+                        <span flex></span>
+                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                            <md-tooltip>Reproducir</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> play_circle_filled </md-icon> 
+                        </md-button>
 
-  <body>
+                        <md-button class="md-icon-button" hide-gt-sm show-sm>
+                            <md-tooltip>Menu</md-tooltip>
+                            <md-icon class="material-icons" ng-class="it.size"> menu </md-icon>
+                        </md-button>
+                </div>
 
-    <div ng-controller="AppCtrl" ng-app="MyApp" layout-fill>
+            </md-toolbar>
 
-   <md-toolbar >
-        <div class="md-toolbar-tools">
+            <md-content layout="column">
+                
+            </md-content>
 
-		<md-button  aria-label="Nuevo"> 
-			<md-icon aria-label="create_new_folder" class="material-icons" ng-class="it.size"> create_new_folder </md-icon> 
-		</md-button>
-		<md-button  aria-label="Nuevo"> 
-			<md-icon aria-label="folder_open" class="material-icons" ng-class="it.size"> folder_open </md-icon> 
-		</md-button>
-		<md-button  aria-label="Nuevo"> 
-			<md-icon aria-label="save" class="material-icons" ng-class="it.size"> save </md-icon> 
-		</md-button>
-		<span flex></span>
-		<md-button class="md-raised" aria-label="Deshacer"> Deshacer </md-button>
-		<md-button class="md-raised" aria-label="Rehacer"> Rehacer </md-button>
-		<span flex></span>
-		<md-button class="md-raised" aria-label="Cortar"> Cortar </md-button>
-		<md-button class="md-raised" aria-label="Copiar"> Copiar </md-button>
-		<md-button class="md-raised" aria-label="Pegar"> Pegar </md-button>
-		<span flex></span>
-		<md-button class="md-raised" aria-label="Borrar"> Borrar </md-button>
-		<span flex></span>
-		<md-button class="md-raised" aria-label="Exportar"> Exportar </md-button>
-		<md-button class="md-raised" aria-label="Compartir"> Compartir </md-button>
-		<span flex></span>
-		<md-button class="md-raised" aria-label="Reproducir"> Reproducir </md-button>
 
-<!--      <md-button class="md-icon-button" aria-label="Favorite">-->
-<!--            <md-icon md-svg-icon="img/icons/favorite-user.svg" ></md-icon>-->
-<!--          </md-button>-->
+        <small class="footer" ng-non-bindable>
+            <div ng-app="footerApp" ng-controller="FooterCtrl as footer">
+                <p>Esteban</p>
+            </div>
+        </small>
 
         </div>
-   </md-toolbar>
-
-
-  <md-content layout="column">
-    <main>
-      <p>content</p>
-      <p>content</p>
-       <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>
-            <p>content</p>
-      <p>content</p>        
-
-            
-
-
-  </md-content>
-
-
-
- <small class="footer" ng-non-bindable>
-    <div ng-app="footerApp" ng-controller="FooterCtrl as footer">
-    
-        <p>Esteban</p>
-  
-    </div>
-  </small>
-
-</div>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js'></script>
-<script src='http://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
-
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js'></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-messages.min.js'></script>
+        <script src='http://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
         <script src="js/index.js"></script>
-
-    
-    
-    
-  </body>
+    </body>
 </html>
