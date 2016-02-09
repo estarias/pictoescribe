@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div ng-include src="'toolbar.html'"></div> 
         <div ng-controller="AppCtrl" ng-app="MyApp" layout-fill>
             <md-toolbar>
                 <div class="md-toolbar-tools">
@@ -72,7 +71,6 @@
                             <md-icon class="material-icons" ng-class="it.size"> menu </md-icon>
                         </md-button>
                 </div>
-
             </md-toolbar>
 
             <md-content layout="column">
@@ -87,6 +85,7 @@
         </small>
 
         </div>
+        
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js'></script>
         <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js'></script>
@@ -95,5 +94,6 @@
         <script src='http://cdn.rawgit.com/angular/bower-material/v0.10.0/angular-material.js'></script>
         <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
         <script src="js/index.js"></script>
+        
     </body>
 </html>
