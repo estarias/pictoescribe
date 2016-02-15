@@ -78,48 +78,13 @@
             </md-content>
 
 
-        <small class="keyboard" ng-cloak>
-            
-            <div class="keyboardContainer" layout layout-wrap layout-padding layout-align="center">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                   <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                  <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                   <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                  <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                   <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-                <img src="img/icons/favorite-user.svg" class="keyboardItem" alt="Washed Out">
-            </div>
-
-        </small>
+        <div  class="keyboard" ng-cloak>            
+            <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center">
+               <div ng-repeat="it in categories" >
+                    <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}">
+               </div>
+            </div>            
+        </div>
 
         </div>
         
