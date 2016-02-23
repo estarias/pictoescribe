@@ -12,47 +12,47 @@
             <md-toolbar>
                 <div class="md-toolbar-tools">
                     <span flex></span>                    
-                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button show-gt-sm hide-sm> 
                             <md-tooltip>Nuevo</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> create_new_folder </md-icon> 
+				<img src="img/toolbar/nuevo.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button show-gt-sm hide-sm> 
                             <md-tooltip>Abrir</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> folder_open </md-icon> 
+				<img src="img/toolbar/abrir.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button  show-gt-sm hide-sm> 
                             <md-tooltip>Guardar</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> save </md-icon> 
+				<img src="img/toolbar/guardar.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
                         <span flex></span>
-                         <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                         <md-button  show-gt-sm hide-sm> 
                             <md-tooltip>Salto línea</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size">low_priority </md-icon> 
+				<img src="img/toolbar/abajo.png" class="toolbar-icon-size"></md-icon> 
                         </md-button>
-                        <md-button ng-click="backspace()" class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button ng-click="backspace()"  show-gt-sm hide-sm> 
                             <md-tooltip>Borrar</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> backspace </md-icon> 
+				<img src="img/toolbar/borrar.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
                         <span flex></span>
-                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button  show-gt-sm hide-sm> 
                             <md-tooltip>Exportar</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> file_download </md-icon> 
+				<img src="img/toolbar/exportar.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button  show-gt-sm hide-sm> 
                             <md-tooltip>Compartir</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> share </md-icon> 
+				<img src="img/toolbar/compartir.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button  show-gt-sm hide-sm> 
                             <md-tooltip>Imprimir</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> print </md-icon> 
+				<img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
                         <span flex></span>
-                        <md-button ng-click="play()" class="md-icon-button" show-gt-sm hide-sm> 
+                        <md-button ng-click="play()"  show-gt-sm hide-sm> 
                             <md-tooltip>Reproducir</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> play_circle_filled </md-icon> 
+				<img src="img/toolbar/reproducir.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
 
-                        <md-button class="md-icon-button" hide-gt-sm show-sm>
+                        <md-button  hide-gt-sm show-sm>
                             <md-tooltip>Menu</md-tooltip>
                             <md-icon class="material-icons" ng-class="it.size"> menu </md-icon>
                         </md-button>
@@ -68,10 +68,10 @@
 
 
         <div  class="keyboard" ng-cloak>            
-            <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center">
+            <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center" >
                <div ng-repeat="it in categories" >
                    <md-tooltip>{{ it.name }}</md-tooltip>
-                   <a ng-click="toggleCategory(it)"><img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
+                   <a ng-click="toggleCategory(it)"  ><img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
                </div>
             </div>            
         </div>
