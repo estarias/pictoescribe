@@ -11,25 +11,17 @@ angular.module('MyApp',  ['ngMaterial'])
         {id:6,name:"verbos", icon:"img/categorias/verbos.png"}
    
       ];
+           
+      $scope.text = [];
       
-      $scope.text = "";
-      $scope.last_element = -1;
-      
-      //Select category
+      //write text
       $scope.toggleCategory = function(it) {
-         //alert(it.name);
-         //someHtmlVar = "<div id='"+it.id+"'>"; 
-         //someHtmlVar += "<md-tooltip>" + it.name + "</md-tooltip>";
-         someHtmlVar = "<img id='"+it.id+"' src='"+ it.icon + "' class='keyboardItem' alt='"+it.name+"'>";
-         //someHtmlVar += "</div>";
-         $scope.text += someHtmlVar;
-         $scope.thisCanBeusedInsideNgBindHtml = $sce.trustAsHtml($scope.text);
+          $scope.text.push(it);
     };
     
-    $scope.backspace = function() {         
-      // document.getElementById('2').remove();
-       var myEl= angular.element(document.getElementById('2'));          
-       myEl.remove();
+    //backspace
+    $scope.backspace = function() {
+        $scope.text.splice($scope.text.length-1, 1);
     };
     
     
