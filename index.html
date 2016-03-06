@@ -16,14 +16,6 @@
                             <md-tooltip>Nuevo</md-tooltip>
  			    <img src="img/toolbar/nuevo.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button show-gt-sm hide-sm> 
-                            <md-tooltip>Abrir</md-tooltip>
-				<img src="img/toolbar/abrir.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
-                        <md-button  show-gt-sm hide-sm> 
-                            <md-tooltip>Guardar</md-tooltip>
-				<img src="img/toolbar/guardar.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
                         <span flex></span>
                          <md-button  show-gt-sm hide-sm> 
                             <md-tooltip>Salto línea</md-tooltip>
@@ -63,6 +55,7 @@
                <div ng-repeat="it in text track by $index" >
                    <md-tooltip>{{ it.name }}</md-tooltip>
                    <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}">
+                   <audio src="{{ it.sound }}" id="{{ it.id }}"></audio>
                </div>               
             </md-content>
 
@@ -84,9 +77,8 @@
         <script src='lib/angular-aria.min.js'></script>
         <script src='lib/angular-messages.min.js'></script>
         <script src='lib/angular-material.js'></script>
-        <script src='lib/assets-cache.js'></script>
+        <script src='lib/assets-cache.js'></script>     
         <script src="js/index.js"></script>
-        <script src="lib/angular.audio.js"></script>
         
     </body>
 </html>
