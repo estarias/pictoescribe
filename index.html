@@ -12,12 +12,12 @@
             <md-toolbar>
                 <div class="md-toolbar-tools">
                     <span flex></span>                    
-                        <md-button show-gt-sm hide-sm> 
+                        <md-button ng-click="new()" show-gt-sm hide-sm> 
                             <md-tooltip>Nuevo</md-tooltip>
  			    <img src="img/toolbar/nuevo.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
                         <span flex></span>
-                         <md-button  show-gt-sm hide-sm> 
+                         <md-button ng-click="endline()" show-gt-sm hide-sm> 
                             <md-tooltip>Salto línea</md-tooltip>
 				<img src="img/toolbar/abajo.png" class="toolbar-icon-size"></md-icon> 
                         </md-button>
@@ -26,15 +26,15 @@
 				<img src="img/toolbar/borrar.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
                         <span flex></span>
-                        <md-button  show-gt-sm hide-sm> 
+                        <md-button ng-click="export()"  show-gt-sm hide-sm> 
                             <md-tooltip>Exportar</md-tooltip>
 				<img src="img/toolbar/exportar.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button  show-gt-sm hide-sm> 
+                        <md-button ng-click="share()" show-gt-sm hide-sm> 
                             <md-tooltip>Compartir</md-tooltip>
 				<img src="img/toolbar/compartir.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
-                        <md-button  show-gt-sm hide-sm> 
+                        <md-button ng-click="print()" show-gt-sm hide-sm> 
                             <md-tooltip>Imprimir</md-tooltip>
 				<img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
                         </md-button>
@@ -55,7 +55,7 @@
                 <audio id="playbox" ></audio>
                <div ng-repeat="it in text track by $index" >
                    <md-tooltip>{{ it.name }}</md-tooltip>
-                   <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}">                   
+                   <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
                </div>               
             </md-content>
 
@@ -64,7 +64,7 @@
             <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center" >
                <div ng-repeat="it in categories" >
                    <md-tooltip>{{ it.name }}</md-tooltip>
-                   <a ng-click="toggleCategory(it)"  ><img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
+                   <a ng-click="toggleCategory(it)" ><img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
                </div>
             </div>            
         </div>
