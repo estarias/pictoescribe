@@ -3,7 +3,7 @@ md-content {
   height: calc(100vh - 64px);
 }
 
-.keyboard { background-color: White; border-top: 1px solid rgba(100, 100, 100, 0.33); bottom: 0; display: block; font-size: 0.75em; height: 100px; left: 0;overflow: auto; padding: 5px; position: fixed; right: 0; }
+.keyboard { background-color: White; border-top: 10px solid rgba(63,81,181, 1); bottom: 0; display: block; font-size: 0.75em; height: 100px; left: 0;overflow: auto; padding: 5px; position: fixed; right: 0; }
 .keyboard > div { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }
 
 .keyboardContainer {
