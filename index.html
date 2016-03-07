@@ -51,11 +51,11 @@
                 </div>
             </md-toolbar>
 
-            <md-content class="keyboardContainer" layout layout-wrap layout-padding  ng-cloak>                
+            <md-content class="keyboardContainer" layout layout-wrap layout-padding  ng-cloak>  
+                <audio id="playbox" ></audio>
                <div ng-repeat="it in text track by $index" >
                    <md-tooltip>{{ it.name }}</md-tooltip>
-                   <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}">
-                   <audio src="{{ it.sound }}" id="{{ it.id }}"></audio>
+                   <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}">                   
                </div>               
             </md-content>
 

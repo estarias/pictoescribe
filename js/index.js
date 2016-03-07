@@ -13,7 +13,7 @@ angular.module('MyApp',  ['ngMaterial'])
       ];
            
       $scope.text = [];
-      
+      $scope.playbox = document.getElementById('playbox');
       //write text
       $scope.toggleCategory = function(it) {
           $scope.text.push(it);
@@ -26,17 +26,42 @@ angular.module('MyApp',  ['ngMaterial'])
     $scope.play = function() {   
         $scope.sounds = new Array();
         angular.forEach($scope.text, function(value, key){
-            $scope.sounds.push(new Audio(value.sound));
+            $scope.sounds.push(value.sound);
         });
-        $scope.i = -1;
-        playSnd();
+        $scope.i = 0;
+        playNext($scope.i);
     };
     
-    function playSnd() {
-        $scope.i++;
-        if ($scope.i == $scope.sounds.length) return;
-        $scope.sounds[$scope.i].addEventListener('ended', playSnd);
-        $scope.sounds[$scope.i].play();
-    }
+    function playNext( index) {
+//        $scope.i++;
+//        if ($scope.i == $scope.sounds.length) return;
+//        $scope.sounds[$scope.i].addEventListener('ended', playSnd);
+//        $scope.sounds[$scope.i].play
+        //$scope.playbox.attr('src', $scope.sounds[index]);
+        $scope.playbox.src = $scope.sounds[index];
+        $scope.playbox.play(); //this will play the element
+        $scope.playbox.addEventListener('ended', function(){ 
+                index++;
+                if(index < $scope.sounds.length) playNext( index);          
+        });
+     } 
       
+      //probar:
+//      var el = $('#playerbox'); //assuming here that el is your <audio> element
+//var audioSources = [song1.mp3, song2.mp3....]// here is your array of filenames
+//var index = 0;
+//
+//function playNext(index){
+//  el.attr('src', audioSources[index]);
+//  el.play(); //this will play the element
+//  el.on('ended', function(){ //this will bind a function to the "ended" event
+//    //increment the index to target the next element
+//    index++;
+//    if(index < audioSources.length){
+//      //plays the next song and binds the function to the ended event again until the queue is empty
+//      playNext(index);          
+//    }
+//  }
+//}
+//playNext(index);
 });
