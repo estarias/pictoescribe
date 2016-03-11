@@ -21,7 +21,8 @@ angular.module('MyApp',  ['ngMaterial'])
        if (it.type == "category"){
            show_elements(it);
        }else {
-           write_key(it);
+           if (it.name != "volver") write_key(it);
+           //write_key(it);
            show_categories();
        }
     };
@@ -100,6 +101,14 @@ angular.module('MyApp',  ['ngMaterial'])
                 } 
             }
         }
+        var volver = {
+            "name": "volver",
+            "icon": "img/keyboard/volver.png",
+            "sound": "img/keyboard/volver.mp3",
+            "color": "red",
+            "type": "element"
+        };
+        add_key(volver);
     }
     
     function write_key(it){
