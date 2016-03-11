@@ -22,7 +22,6 @@ angular.module('MyApp',  ['ngMaterial'])
            show_elements(it);
        }else {
            if (it.name != "volver") write_key(it);
-           //write_key(it);
            show_categories();
        }
     };
@@ -70,15 +69,8 @@ angular.module('MyApp',  ['ngMaterial'])
         clean_keys();
         for (var i = 0; i < $scope.cats_name.length; i++) {
            cat = angular.fromJson($scope.cats_name[i]);
-
-            var category = {
-                "name": cat.name,
-                "icon": "categorias/" + cat.name + "/" + cat.name + ".png",
-                "sound": "categorias/" + cat.name + "/" + cat.name + ".mp3",
-                "color": cat.color,
-                "type": "category"
-            };
-            add_key(category);
+           var c = new Category(cat);
+            add_key(c);
        }
     };
     
@@ -90,24 +82,15 @@ angular.module('MyApp',  ['ngMaterial'])
                 for (var x = 0; x < $scope.cats_name[i].elementos.length; x++) {
                     e = angular.fromJson($scope.cats_name[i]);
                     element_name = e.elementos[x];
-                    var element = {
-                        "name": element_name,
-                        "icon": "categorias/" + pcat.name + "/elementos/" + element_name + ".png",
-                        "sound": "categorias/" + pcat.name + "/elementos/" + element_name + ".mp3",
-                        "color": pcat.color,
-                        "type": "element"
-                    };
+                    var element = new Element(element_name, pcat);
                     add_key(element);
                 } 
             }
         }
-        var volver = {
-            "name": "volver",
-            "icon": "img/keyboard/volver.png",
-            "sound": "img/keyboard/volver.mp3",
-            "color": "red",
-            "type": "element"
-        };
+        var volver = new Element("volver");
+        volver.icon= "img/keyboard/volver.png";
+        volver.sound = "img/keyboard/volver.mp3";
+        volver.color = "red";
         add_key(volver);
     }
     
@@ -126,7 +109,7 @@ angular.module('MyApp',  ['ngMaterial'])
     function clean_text(){
         $scope.text = [];
     }
-         
+             
 });
 
 
