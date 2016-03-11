@@ -7,7 +7,7 @@ angular.module('MyApp',  ['ngMaterial'])
       {name:"colores", color:"yellow", elementos:["amarillo", "azul", "blanco", "dorado", "gris", "marron", "naranja", "negro", "rojo", "rosa", "verde","verde_claro", "violeta"]}  ,
       {name:"numeros",color:"blue",  elementos:["cero", "numero (1)", "numero (2)", "numero (3)", "numero (4)", "numero (5)", "numero (6)", "numero (7)", "numero (8)", "numero (9)"]},    
       {name:"personas",color:"green",  elementos:["yo", "yo_1", "yo_2", "yo_3", "tu", "ellos", "ellos_1", "ellos_2", "ellas", "ellas_1", "nosotros", "nosotras"]},
-      {name:"sociales",color:"red",  elementos:["¡es_gracioso!", "¡estoy_bien!", "¡felicidades!", "¡genial!", "¡lo_siento!", "¿cual_es_tu_email-", "¿cual_es_tu_nombre-", "¿cuantos_dias-", "¿puedo_ayudarte-", "¿que_dices-", "¿que_tal-"]}
+      {name:"sociales",color:"red",  elementos:["es_gracioso!", "estoy_bien!", "felicidades!", "genial!", "lo_siento!", "cual_es_tu_email-", "cual_es_tu_nombre-", "cuantos_dias-", "puedo_ayudarte-", "que_dices-", "que_tal-"]}
     ];
 
     $scope.keys = [];
