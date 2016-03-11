@@ -9,46 +9,7 @@
     </head>
     <body>
         <div ng-controller="AppCtrl" ng-app="MyApp" layout-fill>
-            <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <span flex></span>                    
-                        <md-button ng-click="new()" show-gt-sm hide-sm> 
-                            <md-tooltip>Nuevo</md-tooltip>
- 			    <img src="img/toolbar/nuevo.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
-                         <md-button ng-click="endline()" show-gt-sm hide-sm> 
-                            <md-tooltip>Salto línea</md-tooltip>
-				<img src="img/toolbar/abajo.png" class="toolbar-icon-size"></md-icon> 
-                        </md-button>
-                        <md-button ng-click="backspace()"  show-gt-sm hide-sm> 
-                            <md-tooltip>Borrar</md-tooltip>
-				<img src="img/toolbar/borrar.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
-                        <md-button ng-click="play()"  show-gt-sm hide-sm> 
-                            <md-tooltip>Reproducir</md-tooltip>
-				<img src="img/toolbar/reproducir.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
-                        <span flex></span>
-                        <md-button ng-click="export()"  show-gt-sm hide-sm> 
-                            <md-tooltip>Exportar</md-tooltip>
-				<img src="img/toolbar/exportar.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
-                        <md-button ng-click="share()" show-gt-sm hide-sm> 
-                            <md-tooltip>Compartir</md-tooltip>
-				<img src="img/toolbar/compartir.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>
-                        <md-button ng-click="print()" show-gt-sm hide-sm> 
-                            <md-tooltip>Imprimir</md-tooltip>
-				<img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
-                        </md-button>                       
-
-                        <md-button  hide-gt-sm show-sm>
-                            <md-tooltip>Menu</md-tooltip>
-                            <md-icon class="material-icons" ng-class="it.size"> menu </md-icon>
-                        </md-button>
-                </div>
-            </md-toolbar>
-
+            <div ng-include="'toolbar.html'"></div>
             <md-content class="keyboardContainer" layout layout-wrap layout-padding  ng-cloak>  
                 <audio id="playbox" ></audio>
                <div ng-repeat="it in text track by $index" >
@@ -57,16 +18,8 @@
                </div>               
             </md-content>
 
-
-        <div  class="keyboard" ng-cloak>            
-            <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center" >
-               <div ng-repeat="it in keys" >
-                   <div style="background-color:{{ it.color }};" >
-                   <md-tooltip>{{ it.name }}</md-tooltip>
-                   <a ng-click="toggleKey(it)" ><img  ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
-               </div></div>
-            </div>            
-        </div>
+        <div ng-include="'keyboard.html'"></div>
+        
 
         </div>
         
