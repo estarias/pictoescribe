@@ -21,7 +21,7 @@ angular.module('MyApp',  ['ngMaterial'])
        if (it.type == "category"){
            show_elements(it);
        }else {
-           if (it.name != "volver") write_key(it);
+           if (it.name !== "volver") write_key(it);
            show_categories();
        }
     };
