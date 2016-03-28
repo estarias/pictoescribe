@@ -11,8 +11,7 @@
 	<div ng-controller="AppCtrl" ng-app="MyApp" layout-fill>
 
 	<md-toolbar>
-	    <div class="md-toolbar-tools">
-		<span flex></span>                    
+	    <div class="md-toolbar-tools" layout-align="center center">                 
 		    <md-button ng-click="new()" show-gt-sm hide-sm> 
 		        <md-tooltip>Nuevo</md-tooltip>
 		        <img src="img/toolbar/nuevo.png" class="toolbar-icon-size"></md-icon>
@@ -29,7 +28,6 @@
 		        <md-tooltip>Reproducir</md-tooltip>
 		            <img src="img/toolbar/reproducir.png" class="toolbar-icon-size"></md-icon>
 		    </md-button>
-		    <span flex></span>
 		    <md-button ng-click="export()"  show-gt-sm hide-sm> 
 		        <md-tooltip>Exportar</md-tooltip>
 		            <img src="img/toolbar/exportar.png" class="toolbar-icon-size"></md-icon>
