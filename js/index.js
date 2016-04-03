@@ -35,13 +35,10 @@ angular.module('MyApp',  ['ngMaterial'])
     
     $scope.new = function() { clean_text(); };
     
-    $scope.export = function() {
-        alert("sin implementar");
+    $scope.save = function() {
+        alert("Exportar a pdf - sin implementar");
     };
     
-    $scope.share = function() {
-        alert("sin implementar");
-    };
     $scope.print = function() {
         alert("sin implementar");
     };
