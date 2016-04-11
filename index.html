@@ -50,8 +50,10 @@
     <md-content class="keyboardContainer" layout layout-wrap layout-padding  ng-cloak>  
         <audio id="playbox" ></audio>
        <div ng-repeat="it in text track by $index" >
-           <md-tooltip>{{ it.name }}</md-tooltip>
-           <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
+           <div style="background-color:{{ it.color }};" >
+                <md-tooltip>{{ it.name }}</md-tooltip>
+                <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
+           </div>
        </div>               
     </md-content>
 
@@ -61,7 +63,8 @@
 		   <div style="background-color:{{ it.color }};" >
 		   <md-tooltip>{{ it.name }}</md-tooltip>
 		   <a ng-click="toggleKey(it)" ><img  ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
-	       </div></div>
+                   </div>
+               </div>
 	    </div>            
 	</div>
         
