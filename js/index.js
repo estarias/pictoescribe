@@ -39,11 +39,19 @@ angular.module('MyApp',  ['ngMaterial'])
         alert("Exportar a pdf - sin implementar");
     };
     
+    $scope.said = function(sound) {
+        play(sound);
+    };
+    
     $scope.print = function() {
         alert("sin implementar");
     };
     
-    $scope.play = function() {   
+    function play( src) {
+        $scope.playbox.src = src;
+        $scope.playbox.play();
+    }
+    $scope.play_all = function() {   
         $scope.sounds = new Array();
         angular.forEach($scope.text, function(value, key){
             $scope.sounds.push(value.sound);

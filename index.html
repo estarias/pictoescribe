@@ -24,7 +24,7 @@
 		        <md-tooltip>Borrar</md-tooltip>
 		            <img src="img/toolbar/borrar.png" class="toolbar-icon-size"></md-icon>
 		    </md-button>
-		    <md-button ng-click="play()"  show-gt-sm hide-sm> 
+		    <md-button ng-click="play_all()"  show-gt-sm hide-sm> 
 		        <md-tooltip>Reproducir</md-tooltip>
 		            <img src="img/toolbar/reproducir.png" class="toolbar-icon-size"></md-icon>
 		    </md-button>
@@ -50,7 +50,7 @@
     <md-content class="keyboardContainer" layout layout-wrap layout-padding  ng-cloak>  
         <audio id="playbox" ></audio>
        <div ng-repeat="it in text track by $index" >
-           <div style="background-color:{{ it.color }};" >
+           <div style="background-color:{{ it.color }};" ng-mouseover='said(it.sound)'>
                 <md-tooltip>{{ it.name }}</md-tooltip>
                 <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
            </div>
@@ -60,7 +60,7 @@
 	<div  class="keyboard" ng-cloak>            
 	    <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center" >
 	       <div ng-repeat="it in keys" >
-		   <div style="background-color:{{ it.color }};" >
+		   <div style="background-color:{{ it.color }};" ng-mouseover='said(it.sound)'>
 		   <md-tooltip>{{ it.name }}</md-tooltip>
 		   <a ng-click="toggleKey(it)" ><img  ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
                    </div>
