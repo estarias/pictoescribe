@@ -47,14 +47,16 @@
 	    </div>
 	</md-toolbar>
 
-    <md-content class="keyboardContainer" layout layout-wrap layout-padding  ng-cloak>  
+    <md-content  ng-cloak>  
         <audio id="playbox" ></audio>
-       <div ng-repeat="it in text track by $index" >
-           <div style="background-color:{{ it.color }};" ng-mouseover='said(it.sound)'>
-                <md-tooltip>{{ it.name }}</md-tooltip>
-                <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
-           </div>
-       </div>               
+        <div class="keyboardContainer" layout layout-wrap layout-padding  ng-repeat="items in text" >
+            <div ng-repeat="it in items track by $index" >
+                <div style="background-color:{{ it.color }};" ng-mouseover='said(it.sound)'>
+                     <md-tooltip>{{ it.name }}</md-tooltip>
+                     <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
+                </div>
+            </div>   
+        </div>               
     </md-content>
 
 	<div  class="keyboard" ng-cloak>            

@@ -8,7 +8,7 @@ md-content {
 
 .keyboardContainer {
   width: 100%;
-  height: 100%;
+ /* height: 100%;*/
 }
 
 .keyboardItem {
