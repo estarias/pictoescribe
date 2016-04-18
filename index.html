@@ -50,8 +50,10 @@
     <md-content ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-cloak>  
         <audio id="playbox" validFile></audio>
         <div class="keyboardContainer" layout layout-wrap layout-padding  ng-repeat="items in text" >
-            <div ng-repeat="it in items track by $index" ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}" >
-                <div style="background-color:{{ it.color }};" ng-mouseover='said(it.sound)'>
+            <div ng-repeat="it in items track by $index" 
+                 ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}" 
+                 ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
+                <div style="background-color:{{ it.color }};" >
                      <md-tooltip>{{ it.name }}</md-tooltip>
                      <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
                 </div>
@@ -61,8 +63,8 @@
 
 	<div  class="keyboard" ng-cloak>            
 	    <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center" >
-	       <div ng-repeat="it in keys" >
-		   <div ng-drag="true" ng-drag-data="it" data-allow-transform="true" style="background-color:{{ it.color }};" ng-mouseover='said(it.sound)'>
+	       <div ng-repeat="it in keys" ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
+		   <div ng-drag="true" ng-drag-data="it" data-allow-transform="true" style="background-color:{{ it.color }};" >
 		   <md-tooltip>{{ it.name }}</md-tooltip>
 		   <a ng-click="toggleKey(it)" ><img  ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
                    </div>
