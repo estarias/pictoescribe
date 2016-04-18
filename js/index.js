@@ -99,6 +99,12 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable'])
                 } 
             }
         }
+        var no_tengo_la_palabra = new Element("no_tengo_la_palabra");
+        no_tengo_la_palabra.icon= "img/keyboard/no_tengo_la_palabra.png";
+        no_tengo_la_palabra.sound = "img/keyboard/no_tengo_la_palabra.mp3";
+        no_tengo_la_palabra.color = "red";
+        add_key(no_tengo_la_palabra);
+
         var volver = new Element("volver");
         volver.icon= "img/keyboard/volver.png";
         volver.sound = "img/keyboard/volver.mp3";
