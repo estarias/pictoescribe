@@ -20,3 +20,46 @@ md-content {
   width: 48px;
   height: 48px;
 }
+/*    *{
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    [ng-drag]{
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    [ng-drag]{
+        color:white;
+        text-align: center;
+        display: inline-block;
+        margin:10px 10px;
+        cursor: move;
+    }
+    ul.draggable-objects:after{
+        display: block;
+        content:"";
+        clear:both;
+    }
+    .draggable-objects li{
+        float:left;
+        display: block;
+    }
+    [ng-drag].drag-over{
+        border:solid 1px red;
+    }
+    [ng-drag].dragging{
+        opacity: 0.5;
+    }
+    [ng-drop]{
+        display: block;
+        position: relative;
+    }
+    [ng-drop].drag-enter{
+        border:solid 5px red;
+    }
+    [ng-drop] div{
+        position: relative;
+        z-index: 2;
+    }*/
