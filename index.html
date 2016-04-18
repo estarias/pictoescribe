@@ -32,7 +32,7 @@
 		        <md-tooltip>Guardar</md-tooltip>
 		            <img src="img/toolbar/guardar.png" class="toolbar-icon-size"></md-icon>
 		    </md-button>
-		    <md-button ng-click="print()" show-gt-sm hide-sm> 
+		    <md-button ng-click="printDiv('printable')" show-gt-sm hide-sm> 
 		        <md-tooltip>Imprimir</md-tooltip>
 		            <img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
 		    </md-button> 
@@ -47,13 +47,13 @@
 	    </div>
 	</md-toolbar>
 
-    <md-content ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-cloak>  
+    <md-content id="printable" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-cloak>  
         <audio id="playbox" validFile></audio>
         <div class="keyboardContainer" layout layout-wrap layout-padding  ng-repeat="items in text" >
             <div ng-repeat="it in items track by $index" 
                  ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}" 
                  ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
-                <div style="background-color:{{ it.color }};" >
+                <div style="background-color:{{ it.color }};">
                      <md-tooltip>{{ it.name }}</md-tooltip>
                      <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
                 </div>
