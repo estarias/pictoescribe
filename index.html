@@ -36,6 +36,10 @@
 		        <md-tooltip>Imprimir</md-tooltip>
 		            <img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
 		    </md-button> 
+                    <md-button ng-click="goFullscreen()" show-gt-sm hide-sm> 
+		        <md-tooltip>Pantalla completa</md-tooltip>
+		            <img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
+		    </md-button> 
 		    <md-button ng-click="exit()" show-gt-sm hide-sm> 
 		        <md-tooltip>Salir</md-tooltip>
 		            <img src="img/toolbar/cerrar.png" class="toolbar-icon-size"></md-icon>
@@ -82,7 +86,8 @@
         <script src='lib/angular-messages.min.js'></script>
         <script src='lib/angular-material.js'></script>
         <script src='lib/assets-cache.js'></script>     
-        <script src='lib/ngDraggable.js'></script>  
+        <script src='lib/ngDraggable.js'></script> 
+        <script src="lib/angular-fullscreen.js"></script>
         <script src="js/index.js"></script>
         <script src="js/elementos.js"></script>
     </body>
