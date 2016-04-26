@@ -126,8 +126,10 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable'])
         add_key(volver);
     }
     
-    function write_key(it){        
-        $scope.text[$scope.lines].push(it);    
+    function write_key(it){
+        if (it != null){
+            $scope.text[$scope.lines].push(it);
+        }
     }
     
     function add_key(k){
