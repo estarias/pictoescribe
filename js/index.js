@@ -77,7 +77,9 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable'])
         $scope.sounds = new Array();
         for (l=0; l<$scope.text.length;l++){
             angular.forEach($scope.text[l], function(value, key){
-                $scope.sounds.push(value.sound);
+                if (value != null ){
+                    $scope.sounds.push(value.sound);
+                };
             });
         };
         $scope.i = 0;
