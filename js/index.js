@@ -59,11 +59,7 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable'])
     $scope.said = function(sound) {
         play(sound);
     };
-    
-    $scope.print = function() {
-        alert("sin implementar");
-    };
-    
+      
     function play(src) {
         $scope.playbox.src = src;
         $scope.playbox.play();
@@ -166,7 +162,7 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable'])
         var index = array.indexOf(obj);
     }
     
-    $scope.printDiv = function(divName) {
+    $scope.print = function(divName) {
         var printContents = document.getElementById(divName).innerHTML;
         var originalContents = document.body.innerHTML;      
 
