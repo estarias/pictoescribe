@@ -1,25 +1,57 @@
 body{
   -webkit-print-color-adjust:exact;
-}
-md-content {
-  height: calc(100vh - 64px);
-}
-
-.keyboard { background-color: White; border-top: 10px solid rgba(63,81,181, 1); bottom: 0; display: block; font-size: 0.75em; height: 200px; left: 0;overflow: auto; padding: 5px; position: fixed; right: 0; }
-.keyboard > div { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; }
-
-.keyboardContainer {
-  width: 100%;
- /* height: 100%;*/
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.keyboardItem {
+.loyout{
+  height: 100vh;
+}
+
+.grid{
+  height: calc(100vh - 40vh);
+}
+
+.canvas{
+  overflow: auto;
+}
+
+.keyboard {
+   height: 25vh !important;
+   border-top: 10px solid rgba(63,81,181, 1);
+}
+
+.toolbar-icon{
+  width: 7vh;
+  height: 7vh;
+}
+
+.toolbar-button{
+ line-height: 100%;
+ font-size: 10px;
+}
+
+.keyboard-icon {
   margin: 1em;
-  height: 54px;
+  margin-bottom: 0;
+  width: 7vh;
+  height: 7vh;
 }
-.toolbar-icon-size{
-  width: 48px;
-  height: 48px;
+
+.grid-icon{
+  margin: 1em;
+  margin-bottom: 0;
+  width: 20vh;
+  height: 20vh;
+}
+.item {
+  font-size: 12px;
+  margin: 4px;
+}
+
+.keyboard-item {
+  font-size: 10px;
+  margin: 4px;
 }
 /*    *{
         -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -64,3 +96,4 @@ md-content {
         position: relative;
         z-index: 2;
     }*/
+

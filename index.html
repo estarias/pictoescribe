@@ -8,77 +8,94 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-	<div ng-controller="AppCtrl" ng-app="MyApp" layout-fill>
-
-	<md-toolbar>
-	    <div class="md-toolbar-tools" layout-align="center center">                 
-		    <md-button ng-click="new()" show-gt-sm hide-sm> 
-		        <md-tooltip>Nuevo</md-tooltip>
-		        <img src="img/toolbar/nuevo.png" class="toolbar-icon-size"></md-icon>
-		    </md-button>
-		     <md-button ng-click="endline()" show-gt-sm hide-sm> 
+        
+       <div ng-controller="AppCtrl" ng-app="MyApp" layout-fill> 
+            <div layout="column" class="layout">                
+                <md-toolbar class="md-toolbar-tools" layout-align="center">
+                    <md-button class="toolbar-button" ng-click="new()" show-gt-sm hide-sm> 
+                        <md-tooltip>Nuevo</md-tooltip>                        
+                        <img src="img/toolbar/nuevo.png" class="toolbar-icon">
+                        <br>Nuevo
+                    </md-button>
+		    <md-button class="toolbar-button" ng-click="endline()" show-gt-sm hide-sm> 
 		        <md-tooltip>Salto línea</md-tooltip>
-		            <img src="img/toolbar/abajo.png" class="toolbar-icon-size"></md-icon> 
+                        <img src="img/toolbar/abajo.png" class="toolbar-icon">
+                        <br>Salto de línea
 		    </md-button>
-		    <md-button ng-click="backspace()"  show-gt-sm hide-sm> 
+		    <md-button class="toolbar-button" ng-click="backspace()"  show-gt-sm hide-sm> 
 		        <md-tooltip>Borrar</md-tooltip>
-		            <img src="img/toolbar/borrar.png" class="toolbar-icon-size"></md-icon>
+                        <img src="img/toolbar/borrar.png" class="toolbar-icon">
+                        <br>Borrar
 		    </md-button>
-		    <md-button ng-click="play_all()"  show-gt-sm hide-sm> 
-		        <md-tooltip>Reproducir</md-tooltip>
-		            <img src="img/toolbar/reproducir.png" class="toolbar-icon-size"></md-icon>
+		    <md-button class="toolbar-button" ng-click="play_all()"  show-gt-sm hide-sm> 
+		        <md-tooltip>Escuchar</md-tooltip>
+                        <img src="img/toolbar/reproducir.png" class="toolbar-icon">
+                        <br>Escuchar
 		    </md-button>
-		    <md-button ng-click="save()"  show-gt-sm hide-sm> 
+		    <md-button class="toolbar-button" ng-click="save()"  show-gt-sm hide-sm> 
 		        <md-tooltip>Guardar</md-tooltip>
-		            <img src="img/toolbar/guardar.png" class="toolbar-icon-size"></md-icon>
+                        <img src="img/toolbar/guardar.png" class="toolbar-icon">
+                        <br>Guardar
 		    </md-button>
-		    <md-button ng-click="print('printable')" show-gt-sm hide-sm> 
+		    <md-button class="toolbar-button" ng-click="print('printable')" show-gt-sm hide-sm> 
 		        <md-tooltip>Imprimir</md-tooltip>
-		            <img src="img/toolbar/imprimir.png" class="toolbar-icon-size"></md-icon>
+                        <img src="img/toolbar/imprimir.png" class="toolbar-icon">
+                        <br>Imprimir
 		    </md-button> 
-                    <md-button ng-click="goFullscreen()" show-gt-sm hide-sm> 
+                    <md-button class="toolbar-button" ng-click="goFullscreen()" show-gt-sm hide-sm> 
 		        <md-tooltip>Pantalla completa</md-tooltip>
-		            <img src="img/toolbar/ampliar.jpg" class="toolbar-icon-size"></md-icon>
+                        <img src="img/toolbar/ampliar.jpg" class="toolbar-icon">
+                        <br>Pantalla completa
 		    </md-button> 
-		    <md-button ng-click="exit()" show-gt-sm hide-sm> 
+		    <md-button class="toolbar-button" ng-click="exit()" show-gt-sm hide-sm> 
 		        <md-tooltip>Salir</md-tooltip>
-		            <img src="img/toolbar/cerrar.png" class="toolbar-icon-size"></md-icon>
-		    </md-button>                        
-		    <md-button  hide-gt-sm show-sm>
+                        <img src="img/toolbar/cerrar.png" class="toolbar-icon">
+                        <br>Salir
+		    </md-button>   
+                    <md-button  hide-gt-sm show-sm>
 		        <md-tooltip>Menu</md-tooltip>
 		        <md-icon class="material-icons" ng-class="it.size"> menu </md-icon>
 		    </md-button>
-	    </div>
-	</md-toolbar>
+                </md-toolbar >
+                
+                <div flex layout="column" class="canvas" >
+                
+                <md-content flex layout-margin class="grid" id="printable" 
+                            ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-cloak>
+                    <audio id="playbox" validFile></audio>
+                     <div layout layout-wrap layout-padding  ng-repeat="items in text" >
+                          <div ng-repeat="it in items track by $index" 
+                               ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}" 
+                               ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
+                              <div class="item" style="background-color:{{ it.color }};">
+                                   <md-tooltip>{{ it.name }}</md-tooltip>
+                                   <img ng-src="{{ it.icon }}" class="grid-icon" alt="{{ it.name }}"> 
+                                   <br><b>{{ it.name }}</b>
+                              </div>
+                          </div>   
+                    </div>  
+                </md-content>
+                    
+                <md-content flex layout-margin class="keyboard" ng-cloak>
+                    <div layout layout-wrap layout-padding layout-align="center" >
+                        <div ng-repeat="it in keys" ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
+                            <div class="keyboard-item" style="background-color:{{ it.color }};" 
+                                 ng-drag="true" ng-drag-data="it" data-allow-transform="true"  >
+                            <md-tooltip>{{ it.name }}</md-tooltip>
+                           <a ng-click="toggleKey(it)" >
+                               <img  ng-src="{{ it.icon }}" class="keyboard-icon" alt="{{ it.name }}">
+                           </a>
+                           <br><b>{{ it.name }}</b>
+                           </div>
+                        </div>
+                    </div> 
+                </md-content>
 
-    <md-content id="printable" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" ng-cloak>  
-        <audio id="playbox" validFile></audio>
-        <div class="keyboardContainer" layout layout-wrap layout-padding  ng-repeat="items in text" >
-            <div ng-repeat="it in items track by $index" 
-                 ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}" 
-                 ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
-                <div style="background-color:{{ it.color }};">
-                     <md-tooltip>{{ it.name }}</md-tooltip>
-                     <img ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"> 
                 </div>
-            </div>   
-        </div>               
-    </md-content>
 
-	<div  class="keyboard" ng-cloak>            
-	    <div  class="keyboardContainer" layout layout-wrap layout-padding layout-align="center" >
-	       <div ng-repeat="it in keys" ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
-		   <div ng-drag="true" ng-drag-data="it" data-allow-transform="true" style="background-color:{{ it.color }};" >
-		   <md-tooltip>{{ it.name }}</md-tooltip>
-		   <a ng-click="toggleKey(it)" ><img  ng-src="{{ it.icon }}" class="keyboardItem" alt="{{ it.name }}"></a>
-                   </div>
-               </div>
-	    </div>            
-	</div>
-        
-
-    </div>
-        
+            </div>
+        </div>
+               
         <script src='lib/angular.js'></script>
         <script src='lib/angular-animate.min.js'></script>
         <script src='lib/angular-route.min.js'></script>
