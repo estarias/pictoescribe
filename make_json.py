@@ -6,12 +6,15 @@ import json
 from os import listdir
 from os.path import isfile, join, basename, splitext, isdir
 
+invalidos=[]
 
 def list_elements(path):
     out = []
     for f in listdir(path): 
         base = basename(join(path,f))
         name = splitext(base)[0]
+        if (not exist_file(join(path,name+".png"))): invalidos.append(join(path,name+".png"))
+        if (not exist_file(join(path,name+".mp3"))): invalidos.append(join(path,name+".mp3"))
         if name not in out:
             out.append(name)
     out.sort()
@@ -40,13 +43,10 @@ def path_to_dict(path):
         d['elementos'] = list_elements(join(path,'elementos'))
     else:
         o=[]
-        for f in listdir(path):
-           print "ls: " + f           
+        for f in listdir(path):        
            sd = {}
            if isdir(join(path,f)):
-               print "sub direcotrios"
-               path2 = join(path,f)
-               print path2               
+               path2 = join(path,f)           
                sd['name'] = basename(path2)
                sd['color'] = get_colour(join(path2, "color"))
                sd['elementos'] = list_elements(join(path2,'elementos'))
@@ -58,9 +58,12 @@ o=[]
 for f in listdir('categorias'):
     o.append(path_to_dict(join('categorias',f)))
 
-str_output = json.dumps(o)
+str_output = json.dumps(o, ensure_ascii=False, encoding='utf8')
 
 f = open('output.json', 'w')
-f.write(str_output)
+f.write(str_output.encode('utf8'))
 f.close()
+
+for i in invalidos:
+    print i
 
