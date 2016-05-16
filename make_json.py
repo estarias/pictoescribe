@@ -4,7 +4,7 @@
 import os
 import json
 from os import listdir
-from os.path import isfile, join, basename, splitext
+from os.path import isfile, join, basename, splitext, isdir
 
 
 def list_elements(path):
@@ -36,7 +36,22 @@ def path_to_dict(path):
     d = {}
     d['name'] = basename(path)
     d['color'] = get_colour(join(path, "color"))
-    d['elementos'] = list_elements(join(path,'elementos'))
+    if exist_file(join(path,'elementos')):
+        d['elementos'] = list_elements(join(path,'elementos'))
+    else:
+        o=[]
+        for f in listdir(path):
+           print "ls: " + f           
+           sd = {}
+           if isdir(join(path,f)):
+               print "sub direcotrios"
+               path2 = join(path,f)
+               print path2               
+               sd['name'] = basename(path2)
+               sd['color'] = get_colour(join(path2, "color"))
+               sd['elementos'] = list_elements(join(path2,'elementos'))
+               o.append(sd)
+        d['subcategorias'] = o
     return d
 
 o=[]
