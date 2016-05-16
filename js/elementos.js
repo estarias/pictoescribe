@@ -11,7 +11,7 @@ function SubCategory(cat, subcat, pindex) {
      this.name = subcat.name;
      this.icon = "categorias/" + cat.name + "/" +  subcat.name + "/" + subcat.name + ".png";
      this.sound = "categorias/" + cat.name + "/" +  subcat.name + "/" + subcat.name + ".mp3";
-     this.color = subcat.color;
+     this.color = cat.color;
      this.category = cat;
      this.type = "subcategory";
      this.index = pindex;
@@ -22,11 +22,10 @@ function SubCategory(cat, subcat, pindex) {
     this.type = "element";
     this.cat = cat;
     this.subcat = subcat;
-
     if (subcat !== undefined) {
        this.icon = "categorias/" + cat.name + "/" +  subcat.name + "/elementos/" + name + ".png";
        this.sound = "categorias/" + cat.name +  "/" +  subcat.name + "/elementos/" + name + ".mp3";
-       this.color = subcat.color;
+       this.color = cat.color;
     }else if (cat !== undefined){
        this.icon = "categorias/" + cat.name + "/elementos/" + name + ".png";
        this.sound = "categorias/" + cat.name + "/elementos/" + name + ".mp3";
