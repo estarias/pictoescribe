@@ -32,6 +32,7 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     };
     
     $scope.toggleKey = function(it) {
+       play(it.sound);
        if (it.type == "category" || it.type == "subcategory"){
            show_elements(it);
            $scope.category = it;
