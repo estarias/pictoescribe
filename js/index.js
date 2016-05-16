@@ -2,13 +2,32 @@
 angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
 
 .controller('AppCtrl', function($scope, $sce, $window, $timeout,Fullscreen) {
-    $scope.cats_name = [{"color": "blue", "name": "colores", "elementos": ["amarillo", "azul", "blanco", "dorado", "gris", "marron", "naranja", "negro", "rojo", "rosa", "verde", "verde_claro", "violeta"]}, {"color": "orange", "name": "animales", "elementos": ["abeja", "ardilla", "ballenas", "caballos", "cabras", "camellos", "canario", "caracoles", "cebras", "cerdo", "cerdos", "chimpances", "cocodrilos", "conejos", "delfin", "gallina", "gallo", "gato", "iguanas", "leon", "leon_marino", "mariposa", "mono", "oso", "oso_panda", "pajaro", "paloma", "pantera", "pato", "perro", "pinguino", "polilla", "pulpo", "ranas", "rinoceronte", "ternera", "toro", "tortugas", "vaca", "\u00f1andus"]}, {"color": "blue", "name": "adjetivos", "elementos": ["aburridos", "acompa\u00f1ado", "adulta", "alto", "anterior", "anterior (1)", "aquel", "ausente", "autonomo", "bajo", "baratos", "blandos", "calientes", "central", "claros", "confusos", "cualquier", "curiosos", "dependiente", "derecha", "diferente", "dulce", "duro", "egoista", "enamorado", "enfermos", "entero", "equilibrado", "este", "estos", "extra\u00f1o", "falso", "feliz", "feliz (1)", "feliz (2)", "feo", "flacos", "frio", "fuerte", "gordo", "grande", "guapo", "hermosa", "iguales", "irritado", "izquierda", "joven", "lento", "mas", "menos", "menos (1)", "mojado", "negativo", "nervioso", "ninguna", "ningunas", "ninguno", "nuevo", "oscuros", "otra", "pegajosos", "peque\u00f1a", "pesadas", "picante", "posterior", "primer", "rizados", "rugoso", "sana", "seco", "sentado", "sola", "solo", "suaves", "sucios", "toda", "toda (1)", "ultimo", "vacio", "verdadera", "viejo"]}, {"color": "orange", "name": "lugares", "elementos": ["ambulatorio", "avenida", "bibliotecas", "cafeterias", "carceles", "casas", "cementerios", "cines", "circos", "colegios", "comisarias", "jugueteria", "parada_de_taxis", "plaza", "tienda_de_musica", "tiendas", "verduleria"]}, {"color": "white", "name": "abecedario", "elementos": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]}, {"color": "white", "name": "numeros", "elementos": ["cero", "numero (1)", "numero (2)", "numero (3)", "numero (4)", "numero (5)", "numero (6)", "numero (7)", "numero (8)", "numero (9)"]}, {"color": "green", "name": "verbos", "elementos": ["abrir", "acompa\u00f1ar", "agrupar", "alcanzar", "almorzar", "anteceder", "apagar", "avanzar", "bajar", "borrar", "cancelar", "cantar", "cepillar_los_dientes", "cerrar", "comer", "comer (1)", "comunicarse", "construir", "continuar", "correr", "cortar", "cortar_el_pelo", "cumplir", "dar", "dormir", "duchar", "enfermar", "ense\u00f1ar", "entrar", "enviar", "escribir", "escuchar", "hacer_fotos", "intentar", "jugar", "lavar", "leer", "llamar", "llegar", "llorar", "nacer", "pasear", "pegar", "peinar", "perfumar", "pintar", "pintar (1)", "pulsar", "quejarse", "reir (1)", "rodear", "salir", "separar", "silenciar", "subir", "tomar", "trabajar", "ver", "visitar"]}, {"color": "pink", "name": "sociales", "elementos": ["cual_es_tu_email-", "cual_es_tu_nombre-", "cuantos_dias-", "cuidado", "es_gracioso!", "estoy_bien!", "felicidades!", "genial!", "lo_siento!", "puedo_ayudarte-", "que_dices-", "que_tal-"]}, {"color": "yellow", "name": "personas", "elementos": ["ella", "ellas", "ellas_1", "ellos", "ellos_1", "ellos_2", "nosotras", "nosotros", "tu", "yo", "yo_1", "yo_2", "yo_3"]}, {"color": "red", "name": "objetos", "subcategorias": [{"color": "red", "name": "cuidado personal", "elementos": ["cepillos_de_dientes", "cepillos_de_pelo", "colonias", "cosmeticos", "crema", "desodorante", "esponja", "jabon", "papel_higienico", "papeleras", "pa\u00f1al"]}, {"color": "red", "name": "herramientas", "elementos": ["alicates", "cajas_de_herramientas", "carretillas", "llave_fija", "martillo", "pala", "rastrillo", "serrucho", "tenazas", "tornillo"]}, {"color": "red", "name": "juguetes", "elementos": ["ajedrez", "balon_de_baloncesto", "balon_de_futbol", "baraja", "caballitos_de_madera", "camiones_de_juguete", "coches_de_juguete", "cuento", "globos", "mu\u00f1eca", "mu\u00f1eco", "patinete", "pelota", "pilas", "puzzle", "tren_de_juguete", "triciclo"]}, {"color": "red", "name": "objetos de la casa", "elementos": ["aire_acondicionado", "alfombras", "almohadas", "aspiradora", "batidoras", "ba\u00f1os", "cafeteras", "chimenea", "chimeneas", "cocinas", "colchones", "electrodomesticos", "equipo_de_musica", "horno", "lampara", "libreria", "mantel", "mesa", "microondas", "pared", "plancha", "puerta", "sandwichera", "suelo", "telefono", "television", "ventana"]}, {"color": "red", "name": "\u00fatiles", "elementos": ["agendas", "calculadoras", "carpetas", "cinta_adhesiva", "clips", "compases", "cuaderno", "cuentos", "goma", "lapiz", "libro", "mapa", "pincel", "pinturas_de_colores", "pizarra", "regla", "sacapuntas", "tijeras_escolares"]}, {"color": "red", "name": "instrumentos musicales", "elementos": ["acordeon", "armonica", "baterias", "corneta", "flauta", "guitarra", "maraca", "pentagrama", "percusion", "piano", "saxofon", "tambor", "tuba", "violin"]}, {"color": "red", "name": "tecnolog\u00eda", "elementos": ["CD_Roms", "altavoces", "computadora", "impresora", "memoria", "microfono", "monitores", "mp3", "pendrive", "raton", "software", "tablet"]}]}, {"color": "pink", "name": "interrogativas", "elementos": ["como", "cuantos", "cuantos (1)", "que", "quien-", "quienes"]}, {"color": "red", "name": "alimentos", "subcategorias": [{"color": "red", "name": "hortalizas", "elementos": ["acelga", "calabazas", "cebollas", "maiz", "patata", "pimiento", "tomate"]}, {"color": "red", "name": "comidas", "elementos": ["aceite", "aceite_de_oliva", "arroz", "azucar", "caramelos", "carne", "cereales", "croissant", "croqueta", "empanadas", "espaguetis", "fideos", "flanes", "gelatina", "golosinas", "hamburguesa", "hamburguesas", "helado", "helado (1)", "huevo", "huevo_frito", "jamon", "leche_y_galletas", "lentejas", "mayonesa", "muffins", "muffins (1)", "pan", "pan (1)", "paquetes_de_galletas", "pastel_de_chocolate", "patatas_fritas", "pescado", "pescado (1)", "pollo con patatas", "pollo_asado", "pollo_con_patatas", "pure", "queso", "queso (1)", "queso_rallado", "sal", "sandwich", "sopa", "tableta_de_chocolate", "tartas_de_cumplea\u00f1os"]}, {"color": "red", "name": "bebidas", "elementos": ["Coca-Cola", "agua", "cafe", "leche", "leche_con_cacao", "yogurt", "zumo_de_manzana"]}, {"color": "red", "name": "frutas", "elementos": ["cereza", "cerezas", "ciruela", "higo", "kiwi", "limon", "manzana", "manzana (1)", "naranja", "pera", "pimiento", "platano", "pomelo"]}]}];
+    $scope.cats_name = [{"color": "blue", "name": "colores", "elementos": ["amarillo", "azul", "blanco", "dorado", "gris", "marron", "naranja", "negro", "rojo", "rosa", "verde", "verde_claro", "violeta"]}, 
+{"color": "orange", "name": "animales", "elementos": ["abeja", "ardilla", "ballenas", "caballos", "cabras", "camellos", "canario", "caracoles", "cebras", "cerdo", "cerdos", "chimpances", "cocodrilos", "conejos", "delfin", "gallina", "gallo", "gato", "iguanas", "leon", "leon_marino", "mariposa", "mono", "oso", "oso_panda", "pajaro", "paloma", "pantera", "pato", "perro", "pinguino", "polilla", "pulpo", "ranas", "rinoceronte", "ternera", "toro", "tortugas", "vaca", "\u00f1andus"]}, 
+{"color": "blue", "name": "adjetivos", "elementos": ["aburridos", "acompa\u00f1ado", "adulta", "alto", "anterior", "anterior (1)", "aquel", "ausente", "autonomo", "bajo", "baratos", "blandos", "calientes", "central", "claros", "confusos", "cualquier", "curiosos", "dependiente", "derecha", "diferente", "dulce", "duro", "egoista", "enamorado", "enfermos", "entero", "equilibrado", "este", "estos", "extra\u00f1o", "falso", "feliz", "feliz (1)", "feliz (2)", "feo", "flacos", "frio", "fuerte", "gordo", "grande", "guapo", "hermosa", "iguales", "irritado", "izquierda", "joven", "lento", "mas", "menos", "menos (1)", "mojado", "negativo", "nervioso", "ninguna", "ningunas", "ninguno", "nuevo", "oscuros", "otra", "pegajosos", "peque\u00f1a", "pesadas", "picante", "posterior", "primer", "rizados", "rugoso", "sana", "seco", "sentado", "sola", "solo", "suaves", "sucios", "toda", "toda (1)", "ultimo", "vacio", "verdadera", "viejo"]}, 
+{"color": "orange", "name": "lugares", "elementos": ["ambulatorio", "avenida", "bibliotecas", "cafeterias", "carceles", "casas", "cementerios", "cines", "circos", "colegios", "comisarias", "jugueteria", "parada_de_taxis", "plaza", "tienda_de_musica", "tiendas", "verduleria"]}, 
+{"color": "white", "name": "abecedario", "elementos": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]}, 
+{"color": "white", "name": "numeros", "elementos": ["cero", "numero (1)", "numero (2)", "numero (3)", "numero (4)", "numero (5)", "numero (6)", "numero (7)", "numero (8)", "numero (9)"]}, 
+{"color": "green", "name": "verbos", "elementos": ["abrir", "acompa\u00f1ar", "agrupar", "alcanzar", "almorzar", "anteceder", "apagar", "avanzar", "bajar", "borrar", "cancelar", "cantar", "cepillar_los_dientes", "cerrar", "comer", "comer (1)", "comunicarse", "construir", "continuar", "correr", "cortar", "cortar_el_pelo", "cumplir", "dar", "dormir", "duchar", "enfermar", "ense\u00f1ar", "entrar", "enviar", "escribir", "escuchar", "hacer_fotos", "intentar", "jugar", "lavar", "leer", "llamar", "llegar", "llorar", "nacer", "pasear", "pegar", "peinar", "perfumar", "pintar", "pintar (1)", "pulsar", "quejarse", "reir (1)", "rodear", "salir", "separar", "silenciar", "subir", "tomar", "trabajar", "ver", "visitar"]}, 
+{"color": "pink", "name": "sociales", "elementos": ["cual_es_tu_email-", "cual_es_tu_nombre-", "cuantos_dias-", "cuidado", "es_gracioso!", "estoy_bien!", "felicidades!", "genial!", "lo_siento!", "puedo_ayudarte-", "que_dices-", "que_tal-"]}, {"color": "yellow", "name": "personas", "elementos": ["ella", "ellas", "ellas_1", "ellos", "ellos_1", "ellos_2", "nosotras", "nosotros", "tu", "yo", "yo_1", "yo_2", "yo_3"]}, 
+{"color": "red", "name": "objetos", "subcategorias": [
+    {"color": "red", "name": "cuidado personal", "elementos": ["cepillos_de_dientes", "cepillos_de_pelo", "colonias", "cosmeticos", "crema", "desodorante", "esponja", "jabon", "papel_higienico", "papeleras", "pa\u00f1al"]}, 
+    {"color": "red", "name": "herramientas", "elementos": ["alicates", "cajas_de_herramientas", "carretillas", "llave_fija", "martillo", "pala", "rastrillo", "serrucho", "tenazas", "tornillo"]}, 
+    {"color": "red", "name": "juguetes", "elementos": ["ajedrez", "balon_de_baloncesto", "balon_de_futbol", "baraja", "caballitos_de_madera", "camiones_de_juguete", "coches_de_juguete", "cuento", "globos", "mu\u00f1eca", "mu\u00f1eco", "patinete", "pelota", "pilas", "puzzle", "tren_de_juguete", "triciclo"]}, 
+    {"color": "red", "name": "objetos de la casa", "elementos": ["aire_acondicionado", "alfombras", "almohadas", "aspiradora", "batidoras", "ba\u00f1os", "cafeteras", "chimenea", "chimeneas", "cocinas", "colchones", "electrodomesticos", "equipo_de_musica", "horno", "lampara", "libreria", "mantel", "mesa", "microondas", "pared", "plancha", "puerta", "sandwichera", "suelo", "telefono", "television", "ventana"]},
+    {"color": "red", "name": "\u00fatiles", "elementos": ["agendas", "calculadoras", "carpetas", "cinta_adhesiva", "clips", "compases", "cuaderno", "cuentos", "goma", "lapiz", "libro", "mapa", "pincel", "pinturas_de_colores", "pizarra", "regla", "sacapuntas", "tijeras_escolares"]}, 
+    {"color": "red", "name": "instrumentos musicales", "elementos": ["acordeon", "armonica", "baterias", "corneta", "flauta", "guitarra", "maraca", "pentagrama", "percusion", "piano", "saxofon", "tambor", "tuba", "violin"]}, {"color": "red", "name": "tecnolog\u00eda", "elementos": ["CD_Roms", "altavoces", "computadora", "impresora", "memoria", "microfono", "monitores", "mp3", "pendrive", "raton", "software", "tablet"]}]},
+    {"color": "pink", "name": "interrogativas", "elementos": ["como", "cuantos", "cuantos (1)", "que", "quien-", "quienes"]}, 
+{"color": "red", "name": "alimentos", "subcategorias": [{"color": "red", "name": "hortalizas", "elementos": ["acelga", "calabazas", "cebollas", "maiz", "patata", "pimiento", "tomate"]},
+    {"color": "red", "name": "comidas", "elementos": ["aceite", "aceite_de_oliva", "arroz", "azucar", "caramelos", "carne", "cereales", "croissant", "croqueta", "empanadas", "espaguetis", "fideos", "flanes", "gelatina", "golosinas", "hamburguesa", "hamburguesas", "helado", "helado (1)", "huevo", "huevo_frito", "jamon", "leche_y_galletas", "lentejas", "mayonesa", "muffins", "muffins (1)", "pan", "pan (1)", "paquetes_de_galletas", "pastel_de_chocolate", "patatas_fritas", "pescado", "pescado (1)", "pollo con patatas", "pollo_asado", "pollo_con_patatas", "pure", "queso", "queso (1)", "queso_rallado", "sal", "sandwich", "sopa", "tableta_de_chocolate", "tartas_de_cumplea\u00f1os"]}, 
+    {"color": "red", "name": "bebidas", "elementos": ["Coca-Cola", "agua", "cafe", "leche", "leche_con_cacao", "yogurt", "zumo_de_manzana"]}, 
+    {"color": "red", "name": "frutas", "elementos": ["cereza", "cerezas", "ciruela", "higo", "kiwi", "limon", "manzana", "manzana (1)", "naranja", "pera", "pimiento", "platano", "pomelo"]}]}];
 
     $scope.keys = [];   
     $scope.playbox = document.getElementById('playbox');
     
     clean_text();
-    show_categories();
+    show_categories();   
     
     //play on mouse over with delay
     var timer;    
@@ -32,8 +51,9 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     };
     
     $scope.toggleKey = function(it) {
-       if (it.type == "category"){
+       if (it.type == "category" || it.type == "subcategory"){
            show_elements(it);
+           $scope.category = it;
        }else {
            if (it.name !== "volver") write_key(it);
            show_categories();
@@ -51,11 +71,9 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     $scope.exit = function() {
         $window.close();
     };
-
     
     $scope.endline = function() { 
         $scope.lines++;
-        //$scope.text[$scope.lines] = [$scope.text[$scope.lines-1],[]];
         $scope.text[$scope.lines] = new Array();
     };
     
@@ -73,6 +91,7 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
         $scope.playbox.src = src;
         $scope.playbox.play();
     }
+   
     function stop() {
         $scope.playbox.pause();
         $scope.playbox.currentTime = 0;
@@ -104,22 +123,38 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
         clean_keys();
         for (var i = 0; i < $scope.cats_name.length; i++) {
            cat = angular.fromJson($scope.cats_name[i]);
-           var c = new Category(cat);
+           var c = new Category(cat, i);
             add_key(c);
        }
     };
     
-    function show_elements(pcat){
+    function show_elements(it){
         clean_keys();
-        for (var i = 0; i < $scope.cats_name.length; i++) {
-            cat = angular.fromJson($scope.cats_name[i]);
-            if (cat.name == pcat.name){               
-                for (var x = 0; x < $scope.cats_name[i].elementos.length; x++) {
-                    e = angular.fromJson($scope.cats_name[i]);
+        if (it.type == "category" && $scope.cats_name[it.index].elementos != undefined){
+            //elementos
+            for (var x = 0; x < $scope.cats_name[it.index].elementos.length; x++) {
+                e = angular.fromJson($scope.cats_name[it.index]);
+                element_name = e.elementos[x];
+                var element = new Element(element_name, it);
+                add_key(element);
+            }
+        }else{                    
+            if (it.type == "subcategory"){
+                //eleentos de subcategoria
+                for (var x = 0; x < $scope.cats_name[it.category.index].subcategorias[it.index].elementos.length; x++) {
+                    e = angular.fromJson($scope.cats_name[it.category.index].subcategorias[it.index]);
                     element_name = e.elementos[x];
-                    var element = new Element(element_name, pcat);
+                    var element = new Element(element_name, it.category, it);
                     add_key(element);
-                } 
+                }
+            }else{
+                //subcategorias
+                for (var x = 0; x < $scope.cats_name[it.index].subcategorias.length; x++) {
+                    subcat = angular.fromJson($scope.cats_name[it.index]);
+                    subcat_name = subcat.subcategorias[x];
+                    var c = new SubCategory(it, subcat_name, x);
+                    add_key(c);
+                }
             }
         }
         var no_tengo_la_palabra = new Element("no_tengo_la_palabra");
