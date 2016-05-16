@@ -86,7 +86,7 @@
                     
                 <md-content flex layout-margin class="keyboard" ng-cloak>
                     <div layout layout-wrap layout-padding layout-align="center" >
-                        <div ng-repeat="it in keys" ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
+                        <div ng-repeat="it in keys">
                             <div class="keyboard-item" style="background-color:{{ it.color }};" 
                                  ng-drag="true" ng-drag-data="it" data-allow-transform="true"  >
                             <md-tooltip>{{ it.name }}</md-tooltip>
