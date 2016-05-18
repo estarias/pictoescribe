@@ -60,10 +60,11 @@ for f in listdir('categorias'):
 
 str_output = json.dumps(o, ensure_ascii=False, encoding='utf8')
 
-f = open('output.json', 'w')
+f = open('js/items.js', 'w')
+f.write("var ITEMS = ")
 f.write(str_output.encode('utf8'))
+f.write(";")
 f.close()
 
 for i in invalidos:
     print i
-
