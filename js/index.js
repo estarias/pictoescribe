@@ -7,6 +7,9 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     $scope.keys = [];   
     $scope.playbox = document.getElementById('playbox');
     
+  
+    $scope.getCanvas; // global variable
+    
     clean_text();
     show_categories();   
     
@@ -62,7 +65,11 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     $scope.new = function() { clean_text(); };
     
     $scope.save = function() {
-        alert("Exportar a pdf - sin implementar");
+        $('#printable').html2canvas({ 
+		 onrendered: function (canvas) { 
+                    Canvas2Image.saveAsPNG(canvas);  
+                 }
+	});     
     };
     
     $scope.said = function(sound) {
@@ -225,6 +232,8 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
         return true;
     } 
     
+
+
 
 });
 
