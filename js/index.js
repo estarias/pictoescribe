@@ -67,7 +67,10 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     $scope.save = function() {
         $('#printable').html2canvas({ 
 		 onrendered: function (canvas) { 
-                    Canvas2Image.saveAsPNG(canvas);  
+                    var a = document.createElement('a');
+                    a.href = canvas.toDataURL("image/png;base64;"); 
+                    a.download = "pisctoescribe.png";
+                    a.click();
                  }
 	});     
     };
@@ -206,7 +209,6 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
             popupWin.window.focus();
             popupWin.document.write('<!DOCTYPE html><html><head>' +
                 '<link rel="stylesheet prefetch" href="css/angular-material.css">' +
-                '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">' +
                 '<link rel="stylesheet" href="css/style.css"></head>' +
                 '<body onload="window.print()"><div class="reward-body">' + printContents + '</div></html>');
             popupWin.onbeforeunload = function (event) {
@@ -222,7 +224,6 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
             popupWin.document.open();
             popupWin.document.write('<html><head> ' +
                 '<link rel="stylesheet prefetch" href="css/angular-material.css">' +
-                '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">' +
                 '<link rel="stylesheet" href="css/style.css"></head> ' +
                 '<body onload="window.print()">' + printContents + '</html>');
             popupWin.document.close();
