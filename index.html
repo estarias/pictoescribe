@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>Pictoescribe</title>
         <link rel='stylesheet prefetch' href='css/angular-material.css'>
-        <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -77,7 +76,7 @@
                 </md-content>
                     
                 <md-content flex layout-margin class="keyboard" ng-cloak>
-                    <div layout layout-align="center" >
+                    <div layout >
                         <div ng-repeat="it in keys">
                             <div class="keyboard-item" style="background-color:{{ it.color }};" 
                                  ng-drag="true" ng-drag-data="it" data-allow-transform="true"  >
@@ -105,14 +104,13 @@
         <script src='lib/assets-cache.js'></script>     
         <script src='lib/ngDraggable.js'></script> 
         <script src="lib/angular-fullscreen.js"></script>
+        <script src="lib/jquery.min.js"></script> 
+        <script src="lib/jquery.plugin.html2canvas.js"></script>
+        <script src="lib/base64.js"></script>
+        <script src="lib/canvas2image.js"></script>
         <script src="js/index.js"></script>
         <script src="js/elementos.js"></script>
         <script src="js/items.js"></script>
-        <script src="lib/html2canvas.js"></script>
-            <script src="lib/jquery.min.js"></script> 
-           <script src="lib/jquery.plugin.html2canvas.js"></script>
-           <script src="lib/base64.js"></script>
-           <script src="lib/canvas2image.js"></script>
-       
+        <script src="lib/html2canvas.js"></script>      
     </body>
 </html>
