@@ -27,9 +27,9 @@
                         <br>Borrar
 		    </md-button>
 		    <md-button class="toolbar-button" ng-click="play_all()"  show-gt-sm hide-sm> 
-		        <md-tooltip>Escuchar</md-tooltip>
-                        <img src="img/toolbar/reproducir.png" class="toolbar-icon">
-                        <br>Escuchar
+		        <md-tooltip>{{ play_text }}</md-tooltip>
+                        <img src="{{ play_image }}" class="toolbar-icon">
+                        <br>{{ play_text }}
 		    </md-button>
 		    <md-button class="toolbar-button" ng-click="save()"  show-gt-sm hide-sm> 
 		        <md-tooltip>Guardar</md-tooltip>
@@ -64,8 +64,8 @@
                     <audio id="playbox" validFile></audio>
                      <div layout layout-wrap layout-padding  ng-repeat="items in text" >
                           <div ng-repeat="it in items track by $index" 
-                               ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}" 
-                               ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()">
+                               ng-drag="true" ng-drag-data="it" ng-drag-success="onDragSuccess($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                               <!--ng-mouseenter="showIt(it.sound)" ng-mouseleave="hideIt()" -->
                               <div class="item" style="background-color:{{ it.color }};">
                                    <md-tooltip>{{ it.name }}</md-tooltip>
                                    <img ng-src="{{ it.icon }}" class="grid-icon" alt="{{ it.name }}"> 

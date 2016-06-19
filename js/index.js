@@ -1,37 +1,33 @@
 
 angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
 
-.controller('AppCtrl', function($scope, $sce, $window, $timeout,Fullscreen) {
+.controller('AppCtrl', function($scope, $sce, $window, $timeout, Fullscreen) {
     $scope.cats_name = ITEMS;
-
     $scope.keys = [];   
-    $scope.playbox = document.getElementById('playbox');
-    
+    $scope.playbox = document.getElementById('playbox');    
   
     $scope.getCanvas; // global variable
     
     clean_text();
     show_categories();   
-    
+    show_play(true);
     //play on mouse over with delay
-    var timer;    
-    $scope.showIt = function (sound) {
-        timer = $timeout(function () {
-           $scope.said(sound);
-        }, 500);
-    };    
-    $scope.hideIt = function () {
-        $timeout.cancel(timer);
-        stop();
-    };
+//    var timer;    
+//    $scope.showIt = function (sound) {
+//        timer = $timeout(function () {
+//           $scope.said(sound);
+//        }, 500);
+//    };    
+//    $scope.hideIt = function () {
+//        $timeout.cancel(timer);
+//        stop();
+//    };
 
-     $scope.goFullscreen = function () {
+    $scope.goFullscreen = function () {
         if (Fullscreen.isEnabled())
            Fullscreen.cancel();
         else
            Fullscreen.all();
-        // Set Fullscreen to a specific element (bad practice)
-        // Fullscreen.enable( document.getElementById('img') )
     };
     
     $scope.toggleKey = function(it) {
@@ -66,12 +62,12 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     
     $scope.save = function() {
         $('#printable').html2canvas({ 
-		 onrendered: function (canvas) { 
-                    var a = document.createElement('a');
-                    a.href = canvas.toDataURL("image/png;base64;"); 
-                    a.download = "pisctoescribe.png";
-                    a.click();
-                 }
+            onrendered: function (canvas) { 
+               var a = document.createElement('a');
+               a.href = canvas.toDataURL("image/png;base64;"); 
+               a.download = "pisctoescribe.png";
+               a.click();
+            }
 	});     
     };
     
@@ -89,17 +85,35 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
         $scope.playbox.currentTime = 0;
     }
     
-    $scope.play_all = function() {   
-        $scope.sounds = new Array();
-        for (l=0; l<$scope.text.length;l++){
-            angular.forEach($scope.text[l], function(value, key){
-                if (value != null ){
-                    $scope.sounds.push(value.sound);
-                };
-            });
-        };
-        $scope.i = 0;
-        playNext($scope.i);
+    function isPlaying(audelem) { return !audelem.paused; }
+    
+    function show_play(playing) {     
+        if (playing){
+            $scope.play_text = "ESCUCHAR";
+            $scope.play_image = "img/toolbar/reproducir.png";
+        }else{
+            $scope.play_text = "PARAR";
+            $scope.play_image = "img/toolbar/cancelar.png";   
+        }
+    }
+    $scope.play_all = function() { 
+        if ($scope.text[0].length == 0) return false;  
+        if (isPlaying($scope.playbox)){
+            stop();
+            show_play(true);
+        }else{
+            show_play(false);
+            $scope.sounds = new Array();
+            for (l=0; l<$scope.text.length;l++){
+                angular.forEach($scope.text[l], function(value, key){
+                    if (value != null ){
+                        $scope.sounds.push(value.sound);
+                    };
+                });
+            };
+            $scope.i = 0;
+            playNext($scope.i);
+        }
     };
     
     function playNext( index) {
@@ -107,7 +121,11 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
         $scope.playbox.play(); 
         $scope.playbox.addEventListener('ended', function(){ 
             index++;
-            if(index < $scope.sounds.length) playNext( index);          
+            if(index < $scope.sounds.length) playNext( index); 
+            if (index == $scope.sounds.length){
+                show_play(true);
+                $scope.$apply();
+            }
         });
      } 
      
