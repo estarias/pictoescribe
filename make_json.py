@@ -6,6 +6,7 @@ import json
 from os import listdir
 from os.path import isfile, join, basename, splitext, isdir
 
+categorias=['personas', 'verbos', 'objetos', 'alimentos', 'animales', 'lugares', 'colores', 'adjetivos', 'sociales', 'interrogativas', 'números', 'abecedario']
 invalidos=[]
 
 def list_elements(path):
@@ -55,7 +56,7 @@ def path_to_dict(path):
     return d
 
 o=[]
-for f in listdir('categorias'):
+for f in categorias:
     o.append(path_to_dict(join('categorias',f)))
 
 str_output = json.dumps(o, ensure_ascii=False, encoding='utf8')
