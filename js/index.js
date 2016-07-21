@@ -7,6 +7,7 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     $scope.playbox = document.getElementById('playbox');    
   
     $scope.getCanvas; // global variable
+    $scope.isAndroid = /(android)/i.test(navigator.userAgent);
     
     clean_text();
     show_categories();   
@@ -168,8 +169,8 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
             }
         }
         var no_tengo_la_palabra = new Element("no tengo la palabra");
-        no_tengo_la_palabra.icon= "img/keyboard/no tengo la palabra.png";
-        no_tengo_la_palabra.sound = "img/keyboard/no tengo la palabra.mp3";
+        no_tengo_la_palabra.icon= "img/keyboard/no_tengo_la_palabra.png";
+        no_tengo_la_palabra.sound = "img/keyboard/no_tengo_la_palabra.mp3";
         no_tengo_la_palabra.color = "red";
         add_key(no_tengo_la_palabra);
 
@@ -252,6 +253,7 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
     } 
     
 
+ 
 
 
 });
