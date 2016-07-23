@@ -6,7 +6,7 @@ import json
 from os import listdir
 from os.path import isfile, join, basename, splitext, isdir
 
-categorias=['personas', 'verbos', 'objetos', 'alimentos', 'animales', 'lugares', 'colores', 'adjetivos', 'sociales', 'interrogativas', 'números', 'abecedario']
+categorias=['personas', 'verbos', 'objetos', 'alimentos', 'animales', 'lugares', 'colores', 'adjetivos', 'sociales', 'interrogativas', 'numeros', 'abecedario']
 invalidos=[]
 
 def list_elements(path):
@@ -66,6 +66,8 @@ f.write("var ITEMS = ")
 f.write(str_output.encode('utf8'))
 f.write(";")
 f.close()
+
+print "editar YO y QUIERO"
 
 for i in invalidos:
     print i
