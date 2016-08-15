@@ -120,6 +120,10 @@ angular.module('MyApp',  ['ngMaterial', 'ngDraggable', 'FBAngular'])
             playNext($scope.i);
         }
     };
+
+    $scope.go_back = function() {  
+        show_categories();
+    }
     
     function playNext( index) {
         $scope.playbox.src = $scope.sounds[index];
